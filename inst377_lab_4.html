@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>INST377- Lab4</title>
+    </head>
+
+    <body>
+        <h1 id="colorch">Enter the Information</h1>
+        <button onclick="colochange()">Change Color!</button>
+        <br>
+        <br>
+
+        <!-- alert me -->
+        <form name="Alert">
+            <label for="fname">Preferred First Name: </label>
+            <input type = "text" id="fname">
+            <button onclick="alertme()"> Alert Me!</button>
+            
+        </form>
+        <br>
+
+        <!-- Text Test -->
+        <form name="Validator">
+            <label for="text">Enter a word</label>
+            <input type = "text" id="textval">
+            <button onclick="txttest()">Validate Text</button>
+            <br>
+        </form>
+
+        <!-- Add Text -->
+        <br>
+        <button onclick="addTxt()">Add Text</button>
+
+        <script type="text/javascript">
+            
+            // Color Change button 
+            function colochange() {
+                console.log("Current color is: ",document.getElementById("colorch").style.background)
+                
+                if (document.getElementById("colorch").style.background=='cyan') {
+                    document.getElementById("colorch").style.background='pink';
+                } else {
+                    document.getElementById("colorch").style.background='cyan';
+                }
+                console.log("New color is: ",document.getElementById("colorch").style.color);
+
+                const colorch = document.getElementById("colorch").style;
+                console.log(colorch)
+            }
+
+
+            // Tester
+
+            function txttest() {
+                var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                var textinput = document.getElementById("textval").value;
+
+                if (validation.test(textinput)) {
+                    alert("Please dont use special characters.");
+                }
+            }
+            // Alert Me Button
+            function alertme() {
+                var name = document.getElementById("fname").value
+                alert("Hi,"+name+"!");
+    
+            }
+
+            // Add Text
+            function addTxt() {
+                var addin = document.getElementById("coloch").value;
+                addin.textContent += "Add Text";
+
+            }
+        </script>
+
+    </body>
+</html>
