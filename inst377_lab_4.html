@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>INST377- Lab4</title>
+    </head>
+
+    <body>
+        <h1 id="colorch">Enter the Information</h1>
+        <button onclick="colochange()">Change Color!</button>
+
+        <!-- alert me -->
+        <form name="Name">
+            <label for="fname">Preferred First Name: </label>
+            <input type = "text" id="fname">
+            <br>
+            <button type="button"> Alert Me!</button>
+            
+        </form>
+
+        <script type="text/javascript">
+            
+            // Color Change button 
+            function colochange() {
+                console.log("Current color is: ",document.getElementById("colorch").style.color)
+                
+                if (document.getElementById("colorch").style.color=='cyan') {
+                    document.getElementById("colorch").style.color='pink';
+                } else {
+                    document.getElementById("colorch").style.color='cyan';
+                }
+                console.log("New color is: ",document.getElementById("colorch").style.color);
+
+                const colorch = document.getElementById("colorch").style;
+                console.log(colorch)
+            }
+
+
+            // Tester
+
+            
+            // Alert Me Button
+            function alertme() {
+                
+                window.alert("Hi,",document.getElementById("fname"),"!");
+    
+            }
+        </script>
+
+    </body>
+</html>
