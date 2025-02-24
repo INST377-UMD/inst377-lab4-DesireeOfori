@@ -10,10 +10,10 @@
         <br>
 
         <!-- alert me -->
-        <form name="Name">
+        <form name="Alert">
             <label for="fname">Preferred First Name: </label>
             <input type = "text" id="fname">
-            <button type="text"> Alert Me!</button>
+            <button onclick="alertme()"> Alert Me!</button>
             
         </form>
         <br>
@@ -25,6 +25,10 @@
             <button onclick="txttest()">Validate Text</button>
             <br>
         </form>
+
+        <!-- Add Text -->
+        <br>
+        <button onclick="addTxt()">Add Text</button>
 
         <script type="text/javascript">
             
@@ -48,17 +52,24 @@
 
             function txttest() {
                 var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
-                var textinput = document.getElementById("textval")
+                var textinput = document.getElementById("textval").value;
 
-                if (textinput.includes(validation)) {
+                if (validation.test(textinput)) {
                     alert("Please dont use special characters.");
                 }
             }
             // Alert Me Button
             function alertme() {
-                
-                alert("Hi,",document.getElementById("fname"),"!");
+                var name = document.getElementById("fname").value
+                alert("Hi,"+name+"!");
     
+            }
+
+            // Add Text
+            function addTxt() {
+                var addin = document.getElementById("coloch").value;
+                addin.textContent += "Add Text";
+
             }
         </script>
 
