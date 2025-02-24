@@ -6,26 +6,36 @@
     <body>
         <h1 id="colorch">Enter the Information</h1>
         <button onclick="colochange()">Change Color!</button>
+        <br>
+        <br>
 
         <!-- alert me -->
         <form name="Name">
             <label for="fname">Preferred First Name: </label>
             <input type = "text" id="fname">
-            <br>
-            <button type="button"> Alert Me!</button>
+            <button type="text"> Alert Me!</button>
             
+        </form>
+        <br>
+
+        <!-- Text Test -->
+        <form name="Validator">
+            <label for="text">Enter a word</label>
+            <input type = "text" id="textval">
+            <button onclick="txttest()">Validate Text</button>
+            <br>
         </form>
 
         <script type="text/javascript">
             
             // Color Change button 
             function colochange() {
-                console.log("Current color is: ",document.getElementById("colorch").style.color)
+                console.log("Current color is: ",document.getElementById("colorch").style.background)
                 
-                if (document.getElementById("colorch").style.color=='cyan') {
-                    document.getElementById("colorch").style.color='pink';
+                if (document.getElementById("colorch").style.background=='cyan') {
+                    document.getElementById("colorch").style.background='pink';
                 } else {
-                    document.getElementById("colorch").style.color='cyan';
+                    document.getElementById("colorch").style.background='cyan';
                 }
                 console.log("New color is: ",document.getElementById("colorch").style.color);
 
@@ -36,11 +46,18 @@
 
             // Tester
 
-            
+            function txttest() {
+                var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                var textinput = document.getElementById("textval")
+
+                if (textinput.includes(validation)) {
+                    alert("Please dont use special characters.");
+                }
+            }
             // Alert Me Button
             function alertme() {
                 
-                window.alert("Hi,",document.getElementById("fname"),"!");
+                alert("Hi,",document.getElementById("fname"),"!");
     
             }
         </script>
